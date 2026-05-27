@@ -52,9 +52,18 @@ Before escalation:
 
 ### Long-Term Coaching Safeguards
 
+Support one-off quick use, weekly use, twice-weekly use, one-month pattern review, and six-month coaching cycle.
+
+Common usage patterns: once in a single session, 1/week for 4 weeks, or 2/week for 26 weeks.
+
 For six-month use at 1-2 sessions per week:
 
 - weekly session opening: check latest facts, priority, emotional state, and open commitments
+- one-off quick use: focus on scene classification, one blind spot, and one next action
+- weekly use: review open commitments and one behavior change since last session
+- twice-weekly use: avoid over-logging and keep one session action-oriented
+- one-month pattern review: summarize repeated scenes, repeated blind spots, and behavior change after 4-6 sessions
+- six-month coaching cycle: refresh personal context quarterly and update the playbook only for reusable lessons
 - review open commitments at the start of follow-up sessions
 - monthly pattern review: summarize repeated scenes, blind spots, and behavior change every 4-6 sessions
 - quarterly personal context refresh: update role, goals, team state, and stale context

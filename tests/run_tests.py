@@ -27,10 +27,18 @@ def test_required_files() -> None:
         "references/management_playbook.md",
         "references/reflection_log.md",
         "references/research_notes.md",
+        "references/language_policy.md",
+        "references/language_templates.md",
+        "references/management_library.md",
         "docs/spec_v1.md",
         "docs/plan_v1.md",
         "docs/task_v1.md",
         "docs/research_v1.md",
+        "docs/spec_v3_multilingual.md",
+        "docs/plan_v3_multilingual.md",
+        "docs/task_v3_multilingual.md",
+        "docs/research_v3_multilingual.md",
+        "docs/tests_v3_multilingual.md",
     ]
     for path in required:
         if not (ROOT / path).exists():
@@ -162,6 +170,83 @@ def test_longitudinal_operating_rhythm() -> None:
         assert_contains(combined, phrase, "longitudinal rhythm")
 
 
+def test_beginner_friendly_skill_layout() -> None:
+    skill = read("SKILL.md")
+    for heading in [
+        "## What This Skill Does",
+        "## When To Use This Skill",
+        "## Quick Start",
+        "## Reference Map",
+        "## Memory And Logs",
+        "## Install And Validate",
+    ]:
+        assert_contains(skill, heading, "beginner layout")
+    assert_contains(skill, "python3 tests/run_tests.py", "test command")
+    assert_contains(skill, "Restart Codex", "install note")
+
+
+def test_multilingual_e2e_contracts() -> None:
+    skill = read("SKILL.md")
+    policy = read("references/language_policy.md")
+    templates = read("references/language_templates.md")
+    combined = f"{skill}\n{policy}\n{templates}"
+    fixtures = json.loads(read("tests/multilingual_e2e_fixtures.json"))
+    for language in fixtures["languages"]:
+        assert_contains(combined, language["name"], f"language {language['code']}")
+        assert_contains(combined, language["code"], f"language code {language['code']}")
+        assert_contains(combined, language["scene"], f"language scene {language['code']}")
+        for label in language["required_labels"]:
+            assert_contains(combined, label, f"localized label {language['code']}")
+    for phrase in [
+        "detect the user's preferred language",
+        "latest user message",
+        "mixed-language",
+        "ask which language",
+        "suggested communication scripts",
+        "growth log entries",
+    ]:
+        assert_contains(combined.lower(), phrase.lower(), "language policy")
+
+
+def test_usage_frequency_e2e_contracts() -> None:
+    skill = read("SKILL.md")
+    playbook = read("references/management_playbook.md")
+    combined = f"{skill}\n{playbook}".lower()
+    fixtures = json.loads(read("tests/multilingual_e2e_fixtures.json"))
+    for pattern in fixtures["usage_patterns"]:
+        assert_contains(combined, pattern["frequency"].lower(), f"usage {pattern['name']}")
+        assert_contains(combined, pattern["duration"].lower(), f"usage {pattern['name']}")
+    for phrase in [
+        "one-off quick use",
+        "weekly use",
+        "twice-weekly use",
+        "one-month pattern review",
+        "six-month coaching cycle",
+    ]:
+        assert_contains(combined, phrase, "usage pattern")
+
+
+def test_management_library_contract() -> None:
+    skill = read("SKILL.md")
+    library = read("references/management_library.md")
+    combined = f"{skill}\n{library}".lower()
+    assert_contains(skill, "references/management_library.md", "library navigation")
+    for phrase in [
+        "historical development stage",
+        "core school",
+        "application domain",
+        "theory",
+        "methodology",
+        "philosophy",
+        "tool",
+        "choose 1-3 relevant frameworks",
+    ]:
+        assert_contains(combined, phrase, "library contract")
+    fixtures = json.loads(read("tests/multilingual_e2e_fixtures.json"))
+    for category in fixtures["management_library_categories"]:
+        assert_contains(combined, category.lower(), "management library category")
+
+
 def main() -> None:
     tests = [
         test_required_files,
@@ -173,6 +258,10 @@ def main() -> None:
         test_growth_log_template_is_appendable,
         test_disc_quality_contracts,
         test_longitudinal_operating_rhythm,
+        test_beginner_friendly_skill_layout,
+        test_multilingual_e2e_contracts,
+        test_usage_frequency_e2e_contracts,
+        test_management_library_contract,
     ]
     for test in tests:
         test()

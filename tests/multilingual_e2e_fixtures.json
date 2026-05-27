@@ -1,0 +1,86 @@
+{
+  "languages": [
+    {
+      "code": "zh",
+      "name": "Chinese",
+      "prompt": "帮我准备一次向上汇报，我想少解释原因，多给方案和承诺。",
+      "scene": "upward_reporting",
+      "required_labels": ["日期", "场景", "事实", "盲点", "承诺"]
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "prompt": "Help me give feedback to a team member who missed two deadlines.",
+      "scene": "team_member",
+      "required_labels": ["Date", "Scene", "Facts", "Blind spot", "Commitment"]
+    },
+    {
+      "code": "ja",
+      "name": "Japanese",
+      "prompt": "部下との1on1を振り返りたいです。",
+      "scene": "team_member",
+      "required_labels": ["日付", "場面", "事実", "盲点", "コミットメント"]
+    },
+    {
+      "code": "de",
+      "name": "German",
+      "prompt": "Ich möchte ein Lieferverzögerungsrisiko im Projekt prüfen.",
+      "scene": "task_delivery",
+      "required_labels": ["Datum", "Situation", "Fakten", "Blinder Fleck", "Verpflichtung"]
+    },
+    {
+      "code": "fr",
+      "name": "French",
+      "prompt": "Je veux réfléchir à la motivation d'un collaborateur expérimenté.",
+      "scene": "motivation",
+      "required_labels": ["Date", "Situation", "Faits", "Angle mort", "Engagement"]
+    },
+    {
+      "code": "es",
+      "name": "Spanish",
+      "prompt": "Necesito manejar un conflicto con otro equipo.",
+      "scene": "cross_team_collaboration",
+      "required_labels": ["Fecha", "Escena", "Hechos", "Punto ciego", "Compromiso"]
+    },
+    {
+      "code": "pt",
+      "name": "Portuguese",
+      "prompt": "Quero delegar uma tarefa importante sem perder o controle.",
+      "scene": "delegation",
+      "required_labels": ["Data", "Cena", "Fatos", "Ponto cego", "Compromisso"]
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "prompt": "Хочу провести ретроспективу управленческой ошибки.",
+      "scene": "retrospective",
+      "required_labels": ["Дата", "Ситуация", "Факты", "Слепая зона", "Обязательство"]
+    }
+  ],
+  "usage_patterns": [
+    {"name": "one_off", "frequency": "once", "duration": "single session"},
+    {"name": "weekly", "frequency": "1/week", "duration": "4 weeks"},
+    {"name": "twice_weekly", "frequency": "2/week", "duration": "26 weeks"}
+  ],
+  "beginner_questions": [
+    "What this skill does",
+    "When to use it",
+    "Quick start",
+    "Memory and logs",
+    "Install and validate"
+  ],
+  "management_library_categories": [
+    "classical management",
+    "behavioral science",
+    "modern management theory",
+    "strategy management",
+    "operations and quality management",
+    "organization and HR management",
+    "innovation and change management",
+    "project management",
+    "risk management",
+    "communication and collaboration",
+    "problem solving and decision making",
+    "contemporary frontier ideas"
+  ]
+}
