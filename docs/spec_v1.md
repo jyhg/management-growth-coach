@@ -14,12 +14,9 @@ The skill must help the user:
 
 ## Source Context
 
-The project provides two source documents:
+The original private project used local source notes such as training summaries and 1:1 reflection drafts. Public versions should keep these sources private and include only generalized lessons.
 
-- `../远航培训总结.md`
-- `../1V1沟通汇报稿.md`
-
-The skill should preserve the user's current growth themes:
+The skill should preserve generalized growth themes:
 
 - move from governance-only thinking to business value thinking
 - move from after-the-fact handling to early risk sensing
