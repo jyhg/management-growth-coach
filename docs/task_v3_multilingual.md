@@ -15,4 +15,4 @@
 - [x] Add language templates reference.
 - [x] Add management library reference.
 - [x] Pass all tests.
-- [ ] Commit v3 changes.
+- [x] Commit v3 changes.
