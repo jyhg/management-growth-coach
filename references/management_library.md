@@ -94,6 +94,11 @@ Application domain: goals, performance, learning, talent, team.
 - Amoeba management. Type: methodology and tool. Representative: Kazuo Inamori. Use unit-time accounting, small autonomous units, and internal transfer pricing.
 - HR tools. Type: tool. Use BEI, STAR, competency model, assessment center, KPI, 360 feedback, forced distribution, performance interview, nine-box talent review, broadband pay, equity incentive, total rewards, ADDIE, Kirkpatrick evaluation, mentoring, and rotation.
 - Team tools. Type: tool. Use Belbin team roles, Tuckman team stages, team charter, and retrospective.
+- ASK talent enablement model. Type: methodology. Use attitude, skill, and knowledge as three development levers. Combine selection, value assessment, role model stories, rotation, authorization, mentor pairing, OJT, exams, case analysis, and skill maps.
+- IDP personal development plan. Type: tool. Use to align strengths, development direction, target actions, resources, methods, and expected results.
+- 3+1 performance goal model. Type: methodology. Use key performance outputs, work tasks, improvement and innovation, and personal capability development.
+- New employee six key moments. Type: tool. Use offer acceptance, first day, first week, first month, first mistake, and first excellent performance to design onboarding support.
+- Q12-style engagement survey. Type: tool. Use to inspect expectations, support, strengths, recognition, care, growth, voice, mission, quality, trust, progress, and learning.
 
 ## Innovation And Change Management
 
@@ -142,6 +147,10 @@ Application domain: meetings, influence, stakeholder alignment, conflict.
 - Meeting management. Type: tool. Use Robert's Rules of Order, agenda template, meeting minutes template, and timeboxing.
 - Communication tools. Type: tool. Use nonviolent communication, Johari window, pyramid principle, and elevator pitch.
 - Collaboration tools. Type: tool. Use WBS, RACI, kanban, daily standup, stakeholder matrix, and shared-credit design.
+- Cross-team collaboration checklist. Type: tool. Use decision maker, contact person, stakeholder benefits and losses, compensation, meaning, recognition, difficulty, doubts, multiple options, KPI intersection, timing, trusted third party, and shared credit.
+- Positive feedback five-step method. Type: methodology. Define topic, describe facts, invite cause discussion, connect impact, and elevate motivation.
+- Negative feedback five-step method. Type: methodology. Define topic, describe facts, describe short and long-term impact, analyze causes together, and agree improvement plan and support.
+- Emotional conflict handling checklist. Type: tool. Pause, restore energy, apologize or lighten tone when appropriate, externalize the problem, use third-party support, create a small action loop, and maintain emotional accounts in normal times.
 
 ## Problem Solving And Decision Making
 
@@ -154,6 +163,46 @@ Application domain: root cause, decision, prioritization, analysis.
 - Structured problem solving. Type: methodology. Use McKinsey seven-step problem solving, pyramid principle, MECE, and logic tree.
 - Root cause analysis. Type: tool. Use 5Why, fishbone diagram, fault tree analysis, and FMEA.
 - Decision tools. Type: tool. Use decision tree, decision matrix, cost-benefit analysis, SWOT, Delphi, and nominal group technique.
+- External perspective checklist. Type: tool. Use essence, historical precedent, boss view, peer view, subordinate impact, customer impact, and KPI alignment to avoid local optimum.
+- 10-10-10 reflection. Type: tool. Use 10 seconds, 10 months, and 10 years to inspect short, medium, and long-term consequences.
+- Blue-team challenge. Type: methodology. Assign a challenger to test assumptions, create constructive conflict, then align after the decision.
+- Premortem reflection. Type: methodology. Before action, imagine failure and identify causes and countermeasures.
+
+## Execution And Review Tools
+
+Historical development stage: contemporary integrated management.
+
+Core school: execution, review, and continuous improvement.
+
+Application domain: goal decomposition, task closure, operating cadence, management inspection.
+
+- 415 rule. Type: methodology. Use 40% effort before the meeting, 10% during alignment, and 50% after the meeting for follow-up and closure.
+- Action plan decomposition table. Type: tool. Use key task, owner, collaborator, checker, start and end time, output document, communication mechanism, needed resources, risks, countermeasures, result commitment, and reward or consequence.
+- Task decomposition methods. Type: tool. Use step method, element method, formula method, and researched brainstorming.
+- Green-cross calendar. Type: tool. Use visible daily execution tracking.
+- Task closure rate table. Type: tool. Use to inspect task completion and closure quality.
+- Rotating inspection mechanism. Type: methodology. Use transparent, high-frequency checks to inspect work and help people.
+- Task retrospective improvement table. Type: tool. Use original goal, current result, variance, success factors, failure factors, keep, improve, start, and stop.
+
+## Leadership And Motivation Tools
+
+Historical development stage: contemporary leadership practice.
+
+Core school: leadership behavior, enablement, and non-compensation motivation.
+
+Application domain: influence, trust, motivation, delegation, team energy.
+
+- Leadership vs management distinction. Type: philosophy. Management focuses on How, SOP, method, and efficiency. Leadership focuses on Why, mission, trust, change, and meaning.
+- Circle of influence and circle of concern. Type: tool. Use to move energy from complaint to controllable action.
+- Internal vs external attribution. Type: philosophy and self-check. Use to inspect whether the manager is taking responsibility before blaming the environment.
+- Responsibility response pattern. Type: methodology. State result and impact, own missing management actions, give countermeasures, and commit to next result.
+- Five-point delegation method. Type: methodology. Clarify starting point, ending point, milestones, blockers, and focus.
+- Psychological needs ranking. Type: tool. Use to identify individual motivation differences before choosing incentives.
+- Wow moment. Type: philosophy and tool. Create unexpected positive moments after hygiene factors are stable.
+- Veteran employee motivation. Type: methodology. Use urgency, respect, and freshness.
+- New employee activation. Type: methodology. Use ownership, emotional value, and circle identity.
+- Game achievement incentive. Type: tool. Use challenging goals, frequent feedback, multidimensional recognition, team competition, and surprise.
+- Team-building design dimensions. Type: tool. Use vulnerability, emotion, laughter, physical energy, and belonging.
 
 ## Contemporary Frontier Ideas
 

@@ -273,6 +273,27 @@ def test_management_library_contract() -> None:
         assert_contains(combined, category.lower(), "management library category")
 
 
+def test_training_frameworks_integrated_publicly() -> None:
+    training = read("references/training_notes.md")
+    library = read("references/management_library.md")
+    combined = f"{training}\n{library}".lower()
+    fixtures = json.loads(read("tests/multilingual_e2e_fixtures.json"))
+    for keyword in fixtures["training_integration_keywords"]:
+        assert_contains(combined, keyword.lower(), "training integration keyword")
+    forbidden = [
+        "远航" + "培训" + "总结",
+        "1v1" + "沟通" + "汇报稿",
+        "quick" + "bi",
+        "consumer " + "electronics",
+        "warehouse " + "developers",
+        "demand" + "-side",
+        "/users/zz",
+    ]
+    for phrase in forbidden:
+        if phrase in combined:
+            raise AssertionError(f"public training integration leaked `{phrase}`")
+
+
 def main() -> None:
     tests = [
         test_required_files,
@@ -289,6 +310,7 @@ def main() -> None:
         test_multilingual_e2e_contracts,
         test_usage_frequency_e2e_contracts,
         test_management_library_contract,
+        test_training_frameworks_integrated_publicly,
     ]
     for test in tests:
         test()
