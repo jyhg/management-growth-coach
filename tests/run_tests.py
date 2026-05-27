@@ -20,6 +20,7 @@ def assert_contains(text: str, needle: str, label: str) -> None:
 
 def test_required_files() -> None:
     required = [
+        "README.md",
         "SKILL.md",
         "agents/openai.yaml",
         "references/personal_context.md",
@@ -185,6 +186,31 @@ def test_beginner_friendly_skill_layout() -> None:
     assert_contains(skill, "Restart Codex", "install note")
 
 
+def test_readme_public_usage_contract() -> None:
+    readme = read("README.md")
+    for phrase in [
+        "默认语言：中文",
+        "功能亮点",
+        "快速开始",
+        "安装",
+        "验证",
+        "注意事项",
+        "English",
+        "日本語",
+        "Deutsch",
+        "Français",
+        "Español",
+        "Português",
+        "Русский",
+        "management-growth-coach",
+        "python3 tests/run_tests.py",
+        "13 tests passed",
+        "重启 Codex",
+        "先备份再替换",
+    ]:
+        assert_contains(readme, phrase, "README usage contract")
+
+
 def test_multilingual_e2e_contracts() -> None:
     skill = read("SKILL.md")
     policy = read("references/language_policy.md")
@@ -259,6 +285,7 @@ def main() -> None:
         test_disc_quality_contracts,
         test_longitudinal_operating_rhythm,
         test_beginner_friendly_skill_layout,
+        test_readme_public_usage_contract,
         test_multilingual_e2e_contracts,
         test_usage_frequency_e2e_contracts,
         test_management_library_contract,
