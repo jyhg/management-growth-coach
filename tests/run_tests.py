@@ -211,11 +211,28 @@ def test_readme_public_usage_contract() -> None:
         "Русский",
         "management-growth-coach",
         "python3 tests/run_tests.py",
-        "13 tests passed",
+        "17 tests passed",
         "重启 Codex",
         "先备份再替换",
     ]:
         assert_contains(readme, phrase, "README usage contract")
+
+
+def test_readme_multilingual_parity() -> None:
+    readme = read("README.md")
+    required_sections = {
+        "English": ["Features", "When to use", "Quick start", "Install", "Validate", "Notes"],
+        "日本語": ["機能", "使う場面", "クイックスタート", "インストール", "検証", "注意事項"],
+        "Deutsch": ["Funktionen", "Wann verwenden", "Schnellstart", "Installation", "Validierung", "Hinweise"],
+        "Français": ["Fonctionnalités", "Quand l’utiliser", "Démarrage rapide", "Installation", "Validation", "Notes"],
+        "Español": ["Funciones", "Cuándo usarlo", "Inicio rápido", "Instalación", "Validación", "Notas"],
+        "Português": ["Funcionalidades", "Quando usar", "Início rápido", "Instalação", "Validação", "Notas"],
+        "Русский": ["Возможности", "Когда использовать", "Быстрый старт", "Установка", "Проверка", "Примечания"],
+    }
+    for language, sections in required_sections.items():
+        assert_contains(readme, f"## {language}", f"README {language}")
+        for section in sections:
+            assert_contains(readme, section, f"README {language} parity")
 
 
 def test_multilingual_e2e_contracts() -> None:
@@ -374,6 +391,7 @@ def main() -> None:
         test_longitudinal_operating_rhythm,
         test_beginner_friendly_skill_layout,
         test_readme_public_usage_contract,
+        test_readme_multilingual_parity,
         test_multilingual_e2e_contracts,
         test_usage_frequency_e2e_contracts,
         test_management_library_contract,
