@@ -1,0 +1,43 @@
+{
+  "disc_scenarios": [
+    {
+      "id": "D_cross_team_deadline",
+      "profile": "D",
+      "scene": "cross_team_collaboration",
+      "prompt": "A result-oriented senior developer says another team is blocking delivery and wants to escalate immediately.",
+      "expected_keywords": ["stakeholder", "KPI", "options", "facts", "commitment"]
+    },
+    {
+      "id": "I_negative_feedback",
+      "profile": "I",
+      "scene": "team_member",
+      "prompt": "An expressive analyst missed two deadlines after receiving public criticism and now avoids meetings.",
+      "expected_keywords": ["recognition", "emotion", "facts", "support", "next action"]
+    },
+    {
+      "id": "S_change_resistance",
+      "profile": "S",
+      "scene": "delegation",
+      "prompt": "A stable long-tenured member resists a new AI workflow and keeps doing familiar manual work.",
+      "expected_keywords": ["safety", "small step", "support", "meaning", "milestone"]
+    },
+    {
+      "id": "C_quality_conflict",
+      "profile": "C",
+      "scene": "task_delivery",
+      "prompt": "A detail-oriented engineer delays release because data quality checks are not fully standardized.",
+      "expected_keywords": ["standard", "evidence", "risk", "tradeoff", "definition"]
+    }
+  ],
+  "six_month_simulation": {
+    "weeks": 26,
+    "sessions_per_week": 2,
+    "expected_safeguards": [
+      "open commitments",
+      "pattern summary",
+      "stale context",
+      "behavior change",
+      "playbook"
+    ]
+  }
+}
