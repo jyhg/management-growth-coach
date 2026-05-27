@@ -28,6 +28,7 @@ def test_required_files() -> None:
         "references/management_playbook.md",
         "references/reflection_log.md",
         "references/research_notes.md",
+        "references/knowledge_inbox.md",
         "references/language_policy.md",
         "references/language_templates.md",
         "references/management_library.md",
@@ -40,6 +41,11 @@ def test_required_files() -> None:
         "docs/task_v3_multilingual.md",
         "docs/research_v3_multilingual.md",
         "docs/tests_v3_multilingual.md",
+        "docs/spec_v5_web_research_learning.md",
+        "docs/plan_v5_web_research_learning.md",
+        "docs/task_v5_web_research_learning.md",
+        "docs/research_v5_web_research_learning.md",
+        "docs/tests_v5_web_research_learning.md",
     ]
     for path in required:
         if not (ROOT / path).exists():
@@ -94,6 +100,7 @@ def test_references_are_navigable() -> None:
         "references/management_playbook.md",
         "references/reflection_log.md",
         "references/research_notes.md",
+        "references/knowledge_inbox.md",
     ]:
         assert_contains(skill, ref, "reference navigation")
 
@@ -294,6 +301,66 @@ def test_training_frameworks_integrated_publicly() -> None:
             raise AssertionError(f"public training integration leaked `{phrase}`")
 
 
+def test_web_research_learning_contract() -> None:
+    skill = read("SKILL.md")
+    research = read("references/research_notes.md")
+    inbox = read("references/knowledge_inbox.md")
+    readme = read("README.md")
+    combined = f"{skill}\n{research}\n{inbox}\n{readme}"
+    fixtures = json.loads(read("tests/web_research_e2e_fixtures.json"))
+    for phrase in [
+        "本地优先",
+        "联网补充",
+        "问题脱敏",
+        "融合回答",
+        "用户确认",
+        "knowledge_inbox.md",
+        "Do not write directly to `management_library.md`",
+        "append-only",
+    ]:
+        assert_contains(combined, phrase, "web research workflow")
+    for scenario in fixtures["web_research_scenarios"]:
+        assert_contains(combined, scenario["scene"], scenario["id"])
+        assert_contains(combined, scenario["sanitized_query_example"], scenario["id"])
+        for section in scenario["expected_sections"]:
+            assert_contains(combined, section, scenario["id"])
+    for keyword in fixtures["credible_source_keywords"]:
+        assert_contains(combined, keyword, "credible source keyword")
+    for field in fixtures["knowledge_inbox_fields"]:
+        assert_contains(inbox, field, "knowledge inbox field")
+    for forbidden in fixtures["forbidden_persistence_targets"]:
+        if forbidden in combined:
+            raise AssertionError(f"forbidden persistence wording present: {forbidden}")
+
+
+def test_web_research_public_safety_contract() -> None:
+    combined = "\n".join(
+        read(path)
+        for path in [
+            "SKILL.md",
+            "README.md",
+            "references/research_notes.md",
+            "references/knowledge_inbox.md",
+            "docs/spec_v5_web_research_learning.md",
+            "docs/research_v5_web_research_learning.md",
+            "tests/web_research_e2e_fixtures.json",
+        ]
+    ).lower()
+    required_safety = [
+        "company names",
+        "product names",
+        "personal names",
+        "internal project names",
+        "team-specific details",
+        "local file paths",
+        "credentials or tokens",
+        "generic management question",
+        "do not persist sensitive details",
+    ]
+    for phrase in required_safety:
+        assert_contains(combined, phrase, "web research safety")
+
+
 def main() -> None:
     tests = [
         test_required_files,
@@ -311,6 +378,8 @@ def main() -> None:
         test_usage_frequency_e2e_contracts,
         test_management_library_contract,
         test_training_frameworks_integrated_publicly,
+        test_web_research_learning_contract,
+        test_web_research_public_safety_contract,
     ]
     for test in tests:
         test()

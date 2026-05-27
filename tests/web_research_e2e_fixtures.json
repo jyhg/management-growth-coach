@@ -1,0 +1,50 @@
+{
+  "web_research_scenarios": [
+    {
+      "id": "cross_project_collaboration_web",
+      "scene": "cross_team_collaboration",
+      "prompt": "我需要跨项目协作，想结合本地管理框架和公开可信资料一起判断。",
+      "sanitized_query_example": "cross-functional project collaboration stakeholder alignment management framework",
+      "expected_sections": ["本地知识命中", "外部可信资料补充", "融合判断", "下一步动作", "可沉淀知识", "确认问题"]
+    },
+    {
+      "id": "feedback_web_model",
+      "scene": "team_member",
+      "prompt": "我要给一个连续延期的成员做反馈，请结合本地方法和公开可信反馈模型。",
+      "sanitized_query_example": "constructive feedback model manager employee missed deadline",
+      "expected_sections": ["本地知识命中", "外部可信资料补充", "Suggested Words", "确认问题"]
+    },
+    {
+      "id": "sensitive_query_sanitization",
+      "scene": "business_value",
+      "prompt": "包含公司、产品、团队、项目、客户或本地路径时，联网前必须脱敏。",
+      "sanitized_query_example": "management framework for cross-team business value alignment",
+      "expected_sections": ["sanitize", "generic management question", "do not persist sensitive details"]
+    }
+  ],
+  "credible_source_keywords": [
+    "official institutions",
+    "universities",
+    "recognized management publications",
+    "original framework authors",
+    "reputable books",
+    "professional bodies"
+  ],
+  "knowledge_inbox_fields": [
+    "Date",
+    "Scene",
+    "User question summary",
+    "Sanitized web query",
+    "Source title and URL",
+    "Key insight",
+    "Applicability boundary",
+    "Relation to local knowledge",
+    "User acceptance",
+    "Suggested library action"
+  ],
+  "forbidden_persistence_targets": [
+    "directly modifying management_library.md",
+    "write directly to management_library.md",
+    "automatically merge into management_library.md"
+  ]
+}

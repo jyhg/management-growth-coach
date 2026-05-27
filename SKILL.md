@@ -50,6 +50,7 @@ metadata:
 - `references/management_playbook.md`：可复用管理习惯、长期节奏和跟进规则。
 - `references/reflection_log.md`：长期成长日志和开放承诺。
 - `references/research_notes.md`：外部资料检索和来源记录规则。
+- `references/knowledge_inbox.md`：用户认可后的外部公开知识候选沉淀区。
 - `references/language_policy.md`：多语言识别、语气和资料来源规则。
 - `references/language_templates.md`：多语言成长日志标签和输出短语。
 - `references/management_library.md`：经典管理理论、方法论、理念和工具的入门知识库。
@@ -128,6 +129,33 @@ DISC 只能作为工作假设，不是标签。使用前先询问观察到的行
 当用户要求最新、精确、有来源的管理知识，或当前问题适合引入权威资料时，可以联网检索。
 
 优先使用官方、学术或成熟管理来源。回答中引用来源链接。不要堆理论，要把理论转成用户当前场景下的具体动作。
+
+v5 web research assisted learning 工作流：
+
+1. 本地优先：先检索 `references/training_notes.md`、`references/management_library.md`、`references/management_playbook.md`。
+2. 联网补充：当本地知识不足、用户要求来源、或需要公开可信最佳实践时，再联网检索。
+3. 问题脱敏：联网前把问题改写成 generic management question，移除 company names、product names、personal names、internal project names、team-specific details、local file paths、credentials or tokens。
+4. 融合回答：把本地知识和外部可信资料整合，不把网络内容孤立堆叠。
+5. 用户确认：回答末尾询问用户是否认可，以及是否希望保存外部公开知识。
+6. 候选沉淀：只有在用户认可并明确要求保存时，才追加到 `references/knowledge_inbox.md`。
+
+不要在一次认可后直接写入稳定知识库。Do not write directly to `management_library.md` after one accepted answer. 先进入 append-only `knowledge_inbox.md`，后续按重复出现、来源可靠、适用边界清楚等条件再整理。
+
+示例脱敏查询：
+
+- cross-functional project collaboration stakeholder alignment management framework
+- constructive feedback model manager employee missed deadline
+- management framework for cross-team business value alignment
+
+联网融合回答建议结构：
+
+- 场景判断
+- 本地知识命中
+- 外部可信资料补充
+- 融合判断
+- 下一步动作
+- 可沉淀知识
+- 确认问题
 
 ## Long-Term Use
 
